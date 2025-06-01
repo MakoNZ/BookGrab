@@ -27,13 +27,69 @@ BookGrab focuses on doing one thing well: making it easy to search MAM and downl
 
 ### Prerequisites
 
-- Node.js 18+ and npm
 - A MyAnonyMouse account and session token
 - A running Transmission client
 
-### Environment Variables
+### Installation Options
 
-Create a `.env.local` file in the root directory with the following variables:
+#### Option 1: Docker Compose (Recommended)
+
+1. Create a `docker-compose.yml` file:
+
+```yaml
+version: '3'
+
+services:
+  bookgrab:
+    image: mrorbitman/bookgrab:latest
+    container_name: bookgrab
+    ports:
+      - "3000:3000"
+    environment:
+      - MAM_TOKEN=your_mam_token_here
+      - TRANSMISSION_URL=http://your-transmission-server:9091/transmission/rpc
+      - AUDIOBOOK_DESTINATION_PATH=/path/to/audiobooks
+      - EBOOK_DESTINATION_PATH=/path/to/ebooks
+    restart: unless-stopped
+```
+
+2. Update the environment variables with your own values
+3. Run the container:
+
+```bash
+docker-compose up -d
+```
+
+4. Access BookGrab at http://localhost:3000
+
+#### Option 2: Docker
+
+Run the container directly:
+
+```bash
+docker run -d \
+  --name bookgrab \
+  -p 3000:3000 \
+  -e MAM_TOKEN=your_mam_token_here \
+  -e TRANSMISSION_URL=http://your-transmission-server:9091/transmission/rpc \
+  -e AUDIOBOOK_DESTINATION_PATH=/path/to/audiobooks \
+  -e EBOOK_DESTINATION_PATH=/path/to/ebooks \
+  mrorbitman/bookgrab:latest
+```
+
+#### Option 3: Manual Installation
+
+1. Prerequisites:
+   - Node.js 18+ and npm
+
+2. Clone the repository
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Create a `.env.local` file in the root directory with the following variables:
 
 ```
 MAM_TOKEN=your_mam_token_here
@@ -42,24 +98,17 @@ AUDIOBOOK_DESTINATION_PATH=/path/to/audiobooks
 EBOOK_DESTINATION_PATH=/path/to/ebooks
 ```
 
-### Installation
-
-1. Clone the repository
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Run the development server:
+5. Run the development server:
 
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-## Building for Production
+### Building for Production
+
+If you're installing manually, you can build for production:
 
 ```bash
 npm run build
