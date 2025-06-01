@@ -1,8 +1,10 @@
 # BookGrab
 
-> **Disclaimer:** BookGrab is a personal project I built for myself. Support is limited to MyAnonyMouse (MAM) and Transmission. Use at your own risk.
+> **Disclaimer:** BookGrab is a personal project I built for myself. Support is limited to MyAnonyMouse (MAM) and Transmission.
 
 BookGrab is a simple, streamlined web application that allows you to search for books on MyAnonyMouse using their RSS API and send downloads directly to your Transmission client. It provides a clean, straightforward interface for finding and downloading both ebooks and audiobooks.
+
+![](public/bookgrab.png)
 
 ## Why BookGrab?
 

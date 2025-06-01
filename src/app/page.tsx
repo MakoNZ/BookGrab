@@ -58,7 +58,6 @@ export default function Home() {
         boxShadow="small"
         position="sticky"
         top="0"
-        zIndex="10"
       >
         <Flex
           direction="row"

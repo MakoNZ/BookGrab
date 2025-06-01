@@ -115,7 +115,6 @@ export default function SearchBar({ onSearch, isLoading }: SearchBarProps) {
           boxShadow="medium"
           position="absolute"
           top="100%"
-          zIndex="10"
         >
           {/* <Flex direction="row" justifyContent="space-between" alignItems="center" padding="medium"> */}
           <Text fontWeight="bold" fontSize="small">
