@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BookGrab
+
+> **Disclaimer:** BookGrab is a personal project I built for myself. Support is limited to MyAnonyMouse (MAM) and Transmission. Use at your own risk.
+
+BookGrab is a simple, streamlined web application that allows you to search for books on MyAnonyMouse using their RSS API and send downloads directly to your Transmission client. It provides a clean, straightforward interface for finding and downloading both ebooks and audiobooks.
+
+## Why BookGrab?
+
+Most people looking for book automation probably want [Readarr](https://readarr.com/). However, I built BookGrab because:
+
+1. Readarr requires separate instances for audiobooks and ebooks, which is cumbersome
+2. Readarr's author-based interface is too complicated to share with friends and family
+3. I wanted a simpler, more direct search-and-download experience without the complexity of a full media management system
+
+BookGrab focuses on doing one thing well: making it easy to search MAM and download books with a single click.
+
+## Features
+
+- Simple search interface for MyAnonyMouse's extensive book collection
+- Display search results with book details (title, author, format, length for audiobooks)
+- Download books directly to your Transmission client with a single click
+- Separate download paths for audiobooks and ebooks (I send my audiobooks to the directory scanned by AudioBookshelf and the ebooks I send to the directory scanned by Calibre-Web)
+- Light and dark mode support
+- Minimal setup and configuration
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ and npm
+- A MyAnonyMouse account and session token
+- A running Transmission client
+
+### Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```
+MAM_TOKEN=your_mam_token_here
+TRANSMISSION_URL=http://your-transmission-server:9091/transmission/rpc
+AUDIOBOOK_DESTINATION_PATH=/path/to/audiobooks
+EBOOK_DESTINATION_PATH=/path/to/ebooks
+```
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Technologies Used
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js
+- TypeScript
+- AWS Amplify UI
+- MyAnonyMouse RSS API
+- Transmission RPC API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Limitations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Only works with MyAnonyMouse as the content source
+- Requires a Transmission client for downloads
+- No library management features - just search and download
+- No automatic organization of downloaded content beyond basic path separation
