@@ -62,6 +62,15 @@ export default function SearchBar({ onSearch, isLoading }: SearchBarProps) {
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      if (query.trim()) {
+        performSearch(query.trim());
+      }
+    }
+  };
+
   const performSearch = (searchQuery: string) => {
     onSearch(searchQuery);
 
@@ -96,12 +105,15 @@ export default function SearchBar({ onSearch, isLoading }: SearchBarProps) {
           placeholder="Search for books"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={handleKeyDown}
           onFocus={() => recentSearches.length > 0 && setShowRecent(true)}
           isDisabled={isLoading}
           size="large"
           width="100%"
           labelHidden
         />
+        {/* Hidden submit button to enable Enter key submission */}
+        <button type="submit" style={{ display: 'none' }} aria-hidden="true" />
       </form>
 
       {/* Recent searches dropdown */}
