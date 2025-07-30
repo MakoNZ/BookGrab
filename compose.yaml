@@ -3,12 +3,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    #image: mrorbitman/bookgrab:latest
     container_name: bookgrab
     ports:
       - "5356:3000"
     env_file:
       - .env
-    #volumes:
-    #  - .:/app
     restart: unless-stopped
