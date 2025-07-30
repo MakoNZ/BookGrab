@@ -9,7 +9,9 @@ export const getEnvVariable = (key: string): string => {
 export const getServerEnvVariables = () => {
   return {
     MAM_TOKEN: getEnvVariable("MAM_TOKEN"),
-    TRANSMISSION_URL: getEnvVariable("TRANSMISSION_URL"),
+    QB_HOST: getEnvVariable("QB_HOST"),
+    QB_USERNAME: getEnvVariable("QB_USERNAME"),
+    QB_PASSWORD: getEnvVariable("QB_PASSWORD"),
     AUDIOBOOK_DESTINATION_PATH: getEnvVariable("AUDIOBOOK_DESTINATION_PATH"),
     EBOOK_DESTINATION_PATH: getEnvVariable("EBOOK_DESTINATION_PATH"),
   };

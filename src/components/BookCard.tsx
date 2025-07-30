@@ -224,7 +224,7 @@ export default function BookCard({ book }: BookCardProps) {
       <Flex direction="column" gap="small">
         {grabStatus === "success" && (
           <Alert variation="success" isDismissible={false} hasIcon={true}>
-            Added to Transmission!
+            Added to qBittorrent!
           </Alert>
         )}
 

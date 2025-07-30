@@ -3,6 +3,7 @@ FROM node:18-alpine AS base
 # Install dependencies only when needed
 FROM base AS deps
 WORKDIR /app
+COPY .env .env
 
 # Copy package files
 COPY package.json package-lock.json* ./

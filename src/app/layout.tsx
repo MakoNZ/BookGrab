@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "BookGrab - Search and Download Books",
+  title: "BookGrab Qbit - Search and Download Books",
   description:
-    "Search for books using MyAnonyMouse's RSS search and download them directly to your Transmission client.",
+    "Search for books using MyAnonaMouse's RSS search and download them directly to your qBittorrent client.",
   manifest: "/manifest.json",
   icons: {
     icon: [
