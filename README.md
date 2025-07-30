@@ -1,8 +1,8 @@
 # BookGrab
 
-> **Disclaimer:** BookGrab is a personal project I built for myself. Support is limited to MyAnonyMouse (MAM) and Transmission.
+> **Disclaimer:** BookGrab is a project i modified to suit my use. Support is limited to MyAnonaMouse (MAM) and qbittorrent.
 
-BookGrab is a simple, streamlined web application that allows you to search for books on MyAnonyMouse using their RSS API and send downloads directly to your Transmission client. It provides a clean, straightforward interface for finding and downloading both ebooks and audiobooks.
+BookGrab is a simple, streamlined web application that allows you to search for books on MyAnonaMouse using their RSS API and send downloads directly to your qBittorrent client. It provides a clean, straightforward interface for finding and downloading both ebooks and audiobooks.
 
 ![](public/bookgrab.png)
 
@@ -18,9 +18,9 @@ BookGrab focuses on doing one thing well: making it easy to search MAM and downl
 
 ## Features
 
-- Simple search interface for MyAnonyMouse's extensive book collection
+- Simple search interface for MyAnonaMouse's extensive book collection
 - Display search results with book details (title, author, format, length for audiobooks)
-- Download books directly to your Transmission client with a single click
+- Download books directly to your qBittorrent client with a single click
 - Separate download paths for audiobooks and ebooks (I send my audiobooks to the directory scanned by AudioBookshelf and the ebooks I send to the directory scanned by Calibre-Web)
 - Light and dark mode support
 - Minimal setup and configuration
@@ -29,8 +29,8 @@ BookGrab focuses on doing one thing well: making it easy to search MAM and downl
 
 ### Prerequisites
 
-- A MyAnonyMouse account and session token
-- A running Transmission client
+- A MyAnonaMouse account and session token
+- A running qBittorrent client
 
 ### Installation Options
 
